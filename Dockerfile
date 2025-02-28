@@ -1,4 +1,4 @@
-FROM        node
+FROM        docker.io/node
 RUN         apt-get install unzip -y
 RUN         mkdir /app
 WORKDIR     /tmp
