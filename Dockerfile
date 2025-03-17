@@ -11,7 +11,7 @@ RUN         mkdir /app
 WORKDIR     /tmp
 ADD         https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip /tmp/catalogue.zip
 WORKDIR     /app
-RUN         unzip /tmp/catalogue.zip
+RUN         mv unzip /tmp/catalogue.zip -d /app/
 RUN         rm -rf /tmp/*
 RUN         npm install
 COPY        run.sh /
