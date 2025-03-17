@@ -4,7 +4,7 @@ Connect
 Getting Started Guide  | Enabling/Disabling TLS  | Connecting programmatically
 Download the Amazon DocumentDB Certificate Authority (CA) certificate required to authenticate to your instance
 Copy
-wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem  /app/rds-combined-ca-bundle.pem
 
 Connect to this instance with the mongo shell
 
@@ -22,7 +22,7 @@ mongodb://docdb:roboshop12345@docdb.cluster-cvkemucwmc9p.us-east-1.docdb.amazona
 
 mongodb://docdb:roboshop12345@docdb-2025-02-28-08-02-29.cluster-cvkemucwmc9p.us-east-1.docdb.amazonaws.com:27017/catalogue?tls=true&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false
 
-mongodb://docdb:roboshop12345@docdb-2025-02-28-08-02-29.cluster-cvkemucwmc9p.us-east-1.docdb.amazonaws.com:27017/?tls=true&tlsCAFile=global-bundle.pem&replicahttps://truststore.pki.rds.amazonaws.com/global/global-bundle.pemSet=rs0&readPreference=secondaryPreferred&retryWrites=false
+mongodb://docdb:roboshop12345@docdb-2025-02-28-08-02-29.cluster-cvkemucwmc9p.us-east-1.docdb.amazonaws.com:27017/catalogue?tls=true&tlsCAFile=global-bundle.pem&replicahttps://truststore.pki.rds.amazonaws.com/global/global-bundle.pemSet=rs0&readPreference=secondaryPreferred&retryWrites=false
 
 
 first step:
