@@ -1,6 +1,6 @@
 FROM        docker.io/node
-COPY        mongodb-org-6.0.repo  /etc/yum.repos.d/mongodb.repo
-RUN         apt-get install unzip mongodb-mongosh -y
+COPY        mongodb.repo  /etc/yum.repos.d/mongo.repo
+RUN         apt-get install unzip mongodb-org-shell -y
 RUN         mkdir /app
 WORKDIR     /tmp
 ADD         https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip /tmp/catalogue.zip
