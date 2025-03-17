@@ -1,2 +1,1 @@
-deb [ arch=amd64 ]
-https://repo.mongodb.org/apt/debian buster/mongodb-org/6.0 main
+deb [ arch=amd64 ] https://repo.mongodb.org/apt/debian buster/mongodb-org/6.0 main
