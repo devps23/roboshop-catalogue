@@ -1,5 +1,5 @@
 FROM        docker.io/node
-COPY        mongodb-org-6.0.repo  /etc/yum.repos.d/mongodb-org-6.0.repo
+COPY        mongodb-org-6.0.repo  /etc/yum.repos.d/mongodb.repo
 RUN         apt-get install unzip mongodb-mongosh -y
 RUN         mkdir /app
 WORKDIR     /tmp
