@@ -10,8 +10,9 @@ RUN apt-get update && \
 RUN         mkdir /app
 WORKDIR     /tmp
 ADD         https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip /tmp/catalogue.zip
+RUN         unzip /tmp/catalogue.zip
 WORKDIR     /app
-RUN         unzip /tmp/catalogue.zip /app/
+RUN         /tmp/*  /app/
 RUN         npm install
 COPY        run.sh /
 ENTRYPOINT  ["bash","/run.sh"]
