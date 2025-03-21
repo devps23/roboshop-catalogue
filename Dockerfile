@@ -1,4 +1,4 @@
-FROM        docker.io/node:16
+FROM        docker.io/node:16 As Builder
 RUN         apt-get update && \
             apt-get install -y wget gnupg unzip && \
             wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | apt-key add -
@@ -14,8 +14,17 @@ WORKDIR     /app
 RUN         unzip /tmp/catalogue.zip -d /app/
 RUN         rm -rf /tmp/*
 RUN         npm install
-COPY        run.sh /
-ENTRYPOINT  ["bash","/run.sh"]
+
+
+
+FROM         docker.io/mysql
+WORKDIR      /app
+COPY         --from=builder  /app/ /app/
+COPY         run.sh /
+ENTRYPOINT   ["bash","/run.sh"]
+
+
+
 
 
 #  docker run -it docker.io/node:16 , default container weill create and check whether mysql will work or not
