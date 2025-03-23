@@ -1,6 +1,5 @@
-source data/secrets.txt
-echo data/secrets.txt
-cat data/secrets.txt
+source /data/secrets.txt
+cat /data/secrets.txt
 echo
 echo
 echo
