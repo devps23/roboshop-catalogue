@@ -14,14 +14,10 @@ WORKDIR     /app
 RUN         unzip /tmp/catalogue.zip -d /app/
 RUN         rm -rf /tmp/*
 RUN         npm install
-
-
-
-FROM         docker.io/mysql
-WORKDIR      /app
-COPY         --from=builder  /app/ /app/
 COPY         run.sh /
 ENTRYPOINT   ["bash","/run.sh"]
+
+
 
 
 
