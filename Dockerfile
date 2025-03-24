@@ -14,7 +14,7 @@ WORKDIR     /app
 RUN         unzip /tmp/catalogue.zip -d /app/
 RUN         rm -rf /tmp/*
 RUN         npm install
-COPY          curl -L -O /app/rds-combined-ca-bundle.pem  https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+COPY        curl -L -O /app/rds-combined-ca-bundle.pem  https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
 COPY         run.sh /
 ENTRYPOINT   ["bash","/run.sh"]
 
