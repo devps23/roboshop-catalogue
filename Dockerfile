@@ -16,6 +16,7 @@ RUN         rm -rf /tmp/*
 RUN         npm install
 COPY         run.sh /
 ENTRYPOINT   ["bash","/run.sh"]
+ADD          https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem /app/rds-combined-ca-bundle.pem
 
 
 
