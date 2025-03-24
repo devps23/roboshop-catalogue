@@ -9,7 +9,7 @@ wget https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem  /app/rds
 Connect to this instance with the mongo shell
 
 Copy
-mongosh docdb.cluster-cvkemucwmc9p.us-east-1.docdb.amazonaws.com:27017 --tls --tlsCAFile global-bundle.pem --retryWrites=false --username docdb --password roboshop12345
+mongosh docdb.cluster-cvkemucwmc9p.us-east-1.docdb.amazonaws.com:27017 --tls --tlsCAFile rds-combined-ca-bundle.pem --retryWrites=false --username docdb --password roboshop12345
 
 Connect to this instance with an application
 
