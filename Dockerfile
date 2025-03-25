@@ -10,8 +10,8 @@ RUN              mv /tmp/* /app/
 RUN              rm -rf /tmp/*
 RUN              npm install
 RUN              wget -O /app/global-bundle.pem https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
-COPY             run.sh
-ENTRYPOINT       ["bash","run.sh"]
+COPY             run.sh /app/
+ENTRYPOINT       ["bash","/app/run.sh"]
 
 
 
