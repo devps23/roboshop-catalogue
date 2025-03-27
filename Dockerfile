@@ -9,7 +9,7 @@ WORKDIR          /app
 RUN              mv /tmp/* /app/
 RUN              rm -rf /tmp/*
 RUN              npm install
-RUN              wget -O /app/global-bundle.pem https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+RUN              wget -O /app/rds-combined-ca-bundle.pem https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
 COPY             run.sh /
 ENTRYPOINT       ["bash","/run.sh"]
 
