@@ -24,3 +24,4 @@ ENTRYPOINT       ["bash","/run.sh"]
 # kubectl run debug --image=rkalluru/debug, kubectl run debug --image=pdevops78/kubernetes/debug:cfdi
 
 
+/app/rds-combined-ca-bundle.pem\"}","v":1}
