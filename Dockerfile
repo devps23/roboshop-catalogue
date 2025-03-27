@@ -1,21 +1,11 @@
 FROM             docker.io/node:16
-RUN              apt-get update && apt-get install -y wget unzip curl && \
-                 apt-get clean && rm -rf /var/lib/apt/lists/*
-WORKDIR          /tmp
-RUN              curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
-RUN              unzip /tmp/catalogue.zip
-RUN              mkdir -p app
+RUN              mkdir /app
+COPY            *.js package.json /app/
 WORKDIR          /app
-RUN              mv /tmp/* /app/
-RUN              rm -rf /tmp/*
 RUN              npm install
 RUN              wget -O /app/rds-combined-ca-bundle.pem https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
-COPY             run.sh /app/run.sh
-ENTRYPOINT       ["bash","/app/run.sh"]
-
-
-
-
+COPY             run.sh run.sh
+ENTRYPOINT       ["bash","run.sh"]
 
 
 
@@ -24,4 +14,4 @@ ENTRYPOINT       ["bash","/app/run.sh"]
 # kubectl run debug --image=rkalluru/debug, kubectl run debug --image=pdevops78/kubernetes/debug:cfdi
 
 
-/app/rds-combined-ca-bundle.pem\"}","v":1}
+
