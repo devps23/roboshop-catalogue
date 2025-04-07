@@ -1,6 +1,6 @@
 FROM             docker.io/node:16
 RUN              mkdir /app
-COPY            *.js package.json /app/
+COPY             ./ /app/
 WORKDIR          /app
 RUN              npm install
 RUN              wget -O /app/rds-combined-ca-bundle.pem https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
